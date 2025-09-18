@@ -9,8 +9,11 @@ import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
+  SafeAreaView,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import TodoHome from './src/screens/TodoHome';
+import UseMemoCom from './src/components/useMemo';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,12 +30,9 @@ function AppContent() {
   const safeAreaInsets = useSafeAreaInsets();
 
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+   <UseMemoCom/>
+    </SafeAreaView>
   );
 }
 
